@@ -1,0 +1,520 @@
+{
+  "employees": [
+    {
+      "_id": 1,
+      "isRemoteWork": true,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "Anri",
+      "last_name": "Ugrekhelidze",
+      "first_native_name": "Anri",
+      "last_native_name": "Ugrekhelidze",
+      "middle_native_name": "",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT101",
+      "date_birth": {
+        "year": 1994,
+        "month": 9,
+        "day": 10
+      },
+      "desk_number": "59",
+      "manager": {
+        "first_name": "No",
+        "last_name": "Manager"
+      },
+      "phone": "+53255635609",
+      "email": "anri.ugrekhelidze@leverx.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.779715",
+      "cnumber": "C1658412",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "hr",
+      "visa1": "National visa type D",
+      "visa1_period": "10/05/2022 - 09/05/2023",
+      "visa2": "National visa type C",
+      "visa2_period": "09/05/2023 - 08/05/2024"
+    },
+    {
+      "_id": 2,
+      "isRemoteWork": true,
+      "user_avatar": "/assets/pfp.png",
+      "first_name": "Steve",
+      "last_name": "Cook",
+      "first_native_name": "Steve",
+      "last_native_name": "Cook",
+      "middle_native_name": "D.",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT500",
+      "date_birth": {
+        "year": 1985,
+        "month": 11,
+        "day": 19
+      },
+      "desk_number": 60,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+82050228374",
+      "email": "steve.cook@leverx.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.155371",
+      "cnumber": "C1950920",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "hr"
+    },
+    {
+      "_id": 3,
+      "isRemoteWork": false,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "Jon",
+      "last_name": "Jones",
+      "first_native_name": "Jon",
+      "last_native_name": "Jones",
+      "middle_native_name": "",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT101",
+      "date_birth": {
+        "year": 1984,
+        "month": 11,
+        "day": 14
+      },
+      "desk_number": 63,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+73612358630",
+      "email": "jon.jones@leverx.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.261924",
+      "cnumber": "C3364736",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "employee"
+    },
+    {
+      "_id": 4,
+      "isRemoteWork": true,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "Sarah",
+      "last_name": "Smith",
+      "first_native_name": "Sarah",
+      "last_native_name": "Smith",
+      "middle_native_name": "D.",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT303",
+      "date_birth": {
+        "year": 1970,
+        "month": 5,
+        "day": 3
+      },
+      "desk_number": 47,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+65739806984",
+      "email": "sarah.smith@leverx.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.682307",
+      "cnumber": "C8304693",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "employee"
+    },
+    {
+      "_id": 5,
+      "isRemoteWork": false,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "Illia",
+      "last_name": "Topuria",
+      "first_native_name": "Illia",
+      "last_native_name": "Topuria",
+      "middle_native_name": "",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT303",
+      "date_birth": {
+        "year": 1971,
+        "month": 6,
+        "day": 22
+      },
+      "desk_number": 61,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+54310098107",
+      "email": "illiatopuria@gmail.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.650980",
+      "cnumber": "C1956948",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "employee"
+    },
+    {
+      "_id": 6,
+      "isRemoteWork": true,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "Charles",
+      "last_name": "Oliveira",
+      "first_native_name": "Charles",
+      "last_native_name": "Oliveira",
+      "middle_native_name": "D.",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT1404",
+      "date_birth": {
+        "year": 1999,
+        "month": 9,
+        "day": 22
+      },
+      "desk_number": 54,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+99558281472",
+      "email": "charlesoliveira@gmail.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.284587",
+      "cnumber": "C4359347",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "employee"
+    },
+    {
+      "_id": 7,
+      "isRemoteWork": false,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "Islam",
+      "last_name": "Makhachev",
+      "first_native_name": "Islam",
+      "last_native_name": "Makhachev",
+      "middle_native_name": "",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT202",
+      "date_birth": {
+        "year": 1974,
+        "month": 8,
+        "day": 23
+      },
+      "desk_number": 76,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+16812975669",
+      "email": "islammakhachev@gmail.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.676860",
+      "cnumber": "C5955252",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "employee"
+    },
+    {
+      "_id": 8,
+      "isRemoteWork": true,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "John",
+      "last_name": "Doe",
+      "first_native_name": "David",
+      "last_native_name": "Miller",
+      "middle_native_name": "D.",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT500",
+      "date_birth": {
+        "year": 1979,
+        "month": 4,
+        "day": 17
+      },
+      "desk_number": 9,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+72331568281",
+      "email": "david.miller@leverx.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.653310",
+      "cnumber": "C2594394",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "employee"
+    },
+    {
+      "_id": 9,
+      "isRemoteWork": false,
+      "user_avatar": "/assets/employee.png",
+      "first_name": "Robert",
+      "last_name": "Jackson",
+      "first_native_name": "Robert",
+      "last_native_name": "Jackson",
+      "middle_native_name": "D.",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT202",
+      "date_birth": {
+        "year": 1974,
+        "month": 1,
+        "day": 12
+      },
+      "desk_number": 12,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+26570927460",
+      "email": "robert.jackson@leverx.com",
+      "passwordHash": "$2a$10$w2JxH/0p1QZc7D2Fqy8wIuV0y3rVqFzYlF0hZmFQpQJ6pE0qK9zP6",
+      "skype": "live:.cid.212714",
+      "cnumber": "C8453595",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "role": "employee"
+    },
+    {
+      "isRemoteWork": false,
+      "user_avatar": "/assets/employee.png",
+      "first_native_name": "admin",
+      "last_native_name": "admin",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT101",
+      "date_birth": {
+        "year": 1990,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 20,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+1234567890",
+      "email": "admin@gmail.com",
+      "passwordHash": "$2b$10$XzWTFaDWlqFFXsOWWvnR/eQ8WQ14l.kPnPx33fdZFuHWqyXhtTVzC",
+      "skype": "live:.cid.000000",
+      "cnumber": "C1658411",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "_id": 1764851192893,
+      "first_name": "Admin",
+      "last_name": "Admin",
+      "role": "admin"
+    },
+    {
+      "isRemoteWork": false,
+      "user_avatar": "/assets/employee.png",
+      "first_native_name": "John",
+      "last_native_name": "Snow",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT101",
+      "date_birth": {
+        "year": 1990,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 20,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+1234567890",
+      "email": "johnsnow@gmail.com",
+      "passwordHash": "$2b$10$thuqxwec.DsCAQm4xqqSxujy0hL.7Ye4oFkw9/iPYNbx0jMChaq9y",
+      "skype": "live:.cid.000000",
+      "cnumber": "C1658411",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "_id": 1764926265224,
+      "first_name": "John",
+      "last_name": "Snow",
+      "role": "hr"
+    },
+    {
+      "isRemoteWork": false,
+      "user_avatar": "/assets/employee.png",
+      "first_native_name": "Merab",
+      "last_native_name": "Dvalishvili",
+      "department": "Web & Mobile",
+      "building": "Building A",
+      "room": "LPT101",
+      "date_birth": {
+        "year": 1990,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 20,
+      "manager": {
+        "id": "1764926265224",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+1234567890",
+      "email": "merabdvalishvili@gmail.com",
+      "passwordHash": "$2b$10$.ZHAtTttyPjZ49yTbjdJSeDacnTocK9rvpQANUeU8HJoyNG2Njy4a",
+      "skype": "live:.cid.000000",
+      "cnumber": "C1658411",
+      "citizenship": "Georgian",
+      "visa": [
+        {
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        },
+        {
+          "type": "National visa type C",
+          "start_date": 1683608400000,
+          "end_date": 1715144400000
+        }
+      ],
+      "_id": 1764926310147,
+      "first_name": "Merab",
+      "last_name": "Dvalishvili",
+      "role": "employee"
+    }
+  ]
+}

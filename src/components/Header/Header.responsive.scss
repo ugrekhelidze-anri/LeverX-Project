@@ -1,0 +1,29 @@
+@media (max-width: 1174px) {
+  .app-header {
+    height: 4.5rem;
+    padding: 0 1rem;
+    gap: 0.8rem;
+  }
+
+  body {
+    padding-top: 4.5rem;
+  }
+
+  .app-header__brand {
+    flex: 1;
+  }
+
+  .app-header__menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-header__support,
+  .app-header__profile,
+  .app-header__exit,
+  .app-header__nav {
+    display: none;
+  }
+}
+

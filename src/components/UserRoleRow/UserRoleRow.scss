@@ -1,0 +1,137 @@
+.roles-permissions__row {
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr 2fr 1fr;
+  gap: 1.9rem;
+  padding: 1.3rem 2rem;
+  align-items: center;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background-color: var(--color-white);
+  border-bottom: 0.1rem solid var(--color-border-light);
+
+  &:nth-child(even) {
+    background-color: var(--color-surface-alt);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.roles-permissions__row-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.roles-permissions__avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--color-avatar-bg);
+}
+
+.roles-permissions__name-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.roles-permissions__row-address,
+.roles-permissions__row-vacation,
+.roles-permissions__row-admin {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  padding-left: 1.3rem;
+}
+
+.roles-permissions__role-btn {
+  padding: 0.8rem 1rem;
+  border: 0.03rem solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 7.5rem;
+  text-align: center;
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  &--active,
+  &.--active {
+    background: var(--color-button);
+    color: var(--color-white);
+    border-color: var(--color-button);
+
+    &:hover {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+}
+
+.roles-permissions__row-vacation .roles-permissions__role-btn,
+.roles-permissions__row-admin .roles-permissions__role-btn {
+  cursor: default;
+
+  &:hover {
+    border-color: var(--color-border);
+    color: var(--color-text-secondary);
+  }
+
+  &--active:hover,
+  &.--active:hover {
+    background: var(--color-button);
+    border-color: var(--color-button);
+    color: var(--color-white);
+  }
+}
+
+.roles-permissions__row-admin .roles-permissions__admin-toggle {
+  cursor: pointer;
+  color: var(--color-text-tab);
+
+  &.roles-permissions__role-btn--active,
+  &.--active {
+    color: var(--color-white);
+  }
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  &.roles-permissions__role-btn--active:hover,
+  &.--active:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+  }
+}
+
+.roles-permissions__role-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.roles-permissions__admin-toggle:disabled {
+  opacity: 1;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}

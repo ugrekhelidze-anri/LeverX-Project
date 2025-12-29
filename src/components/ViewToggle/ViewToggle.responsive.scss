@@ -1,0 +1,16 @@
+@media (max-width: 1174px) {
+  .directory__toolbar-views {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .directory__toolbar-count {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+  }
+
+  .directory__toolbar-buttons {
+    display: none;
+  }
+}
+

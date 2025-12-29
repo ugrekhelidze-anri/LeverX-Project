@@ -1,0 +1,189 @@
+@media (max-width: 1024px) {
+  .roles-permissions__row {
+    grid-template-columns: 2fr 1.3fr 1.7fr 0.9fr;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .roles-permissions__avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .roles-permissions__role-btn {
+    padding: 0.5rem 0.7rem;
+    width: 6rem;
+  }
+
+  .roles-permissions__row-address,
+  .roles-permissions__row-vacation,
+  .roles-permissions__row-admin {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .roles-permissions__row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1.5rem;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.1rem 0.4rem var(--color-shadow-light);
+    border: 0.1rem solid var(--color-border-light);
+    background-color: var(--color-white) !important;
+  }
+
+  .roles-permissions__row-name {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.1rem solid var(--color-border-light);
+    gap: 1rem;
+  }
+
+  .roles-permissions__avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .roles-permissions__name-text {
+    font-weight: 500;
+  }
+
+  .roles-permissions__row-address,
+  .roles-permissions__row-vacation,
+  .roles-permissions__row-admin {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 1.2rem;
+    margin-top: 0;
+    border-top: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .roles-permissions__row-admin {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .roles-permissions__row-address {
+    border-bottom: 0.1rem solid var(--color-border-light);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .roles-permissions__row-vacation {
+    border-bottom: 0.1rem solid var(--color-border-light);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .roles-permissions__row-address::before {
+    content: "Address book role";
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.03rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .roles-permissions__row-vacation::before {
+    content: "Vacation role";
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.03rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .roles-permissions__row-admin::before {
+    content: "Admin";
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.03rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .roles-permissions__row-address,
+  .roles-permissions__row-vacation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .roles-permissions__role-btn {
+    padding: 0.7rem 1rem;
+    width: 100%;
+    border-radius: 0.4rem;
+    font-weight: 600;
+  }
+
+  .roles-permissions__row-admin {
+    width: 100%;
+  }
+
+  .roles-permissions__row-admin .roles-permissions__role-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .roles-permissions__row {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .roles-permissions__row-name {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    gap: 0.8rem;
+  }
+
+  .roles-permissions__avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+
+
+  .roles-permissions__row-address,
+  .roles-permissions__row-vacation {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .roles-permissions__row-admin {
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .roles-permissions__row-address::before,
+  .roles-permissions__row-vacation::before,
+  .roles-permissions__row-admin::before {
+    margin-bottom: 0.6rem;
+  }
+
+  .roles-permissions__role-btn {
+    padding: 0.7rem 1rem;
+    width: 100%;
+  }
+
+  .roles-permissions__row-admin .roles-permissions__role-btn {
+    width: 100%;
+  }
+}
+

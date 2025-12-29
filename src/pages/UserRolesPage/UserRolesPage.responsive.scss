@@ -1,0 +1,101 @@
+@media (max-width: 1024px) {
+  .roles-permissions {
+    padding: 1rem;
+  }
+
+  .roles-permissions__card {
+    padding: 1.5rem;
+  }
+
+  .roles-permissions__table-header {
+    grid-template-columns: 2fr 1.3fr 1.7fr 0.9fr;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .roles-permissions__table-header-address,
+  .roles-permissions__table-header-vacation,
+  .roles-permissions__table-header-admin {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .roles-permissions {
+    padding: 1rem;
+  }
+
+  .roles-permissions__card {
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+  }
+
+  .roles-permissions__header {
+    margin-bottom: 1.2rem;
+  }
+
+  .roles-permissions__table-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    border: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .roles-permissions__table-header-address,
+  .roles-permissions__table-header-vacation,
+  .roles-permissions__table-header-admin {
+    display: none;
+  }
+
+  .roles-permissions__table-header-search {
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    grid-column: 1;
+  }
+
+  .roles-permissions__search-input {
+    height: 3rem;
+    font-size: 1rem;
+    padding: 0 1rem 0 3rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .roles-permissions__table-header-search::before {
+    left: 1rem;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .roles-permissions {
+    padding: 0.8rem;
+  }
+
+  .roles-permissions__card {
+    padding: 1rem;
+  }
+
+  .roles-permissions__header {
+    margin-bottom: 1rem;
+  }
+
+  .roles-permissions__table-header-search {
+    margin-bottom: 1.2rem;
+  }
+
+  .roles-permissions__search-input {
+    height: 2.8rem;
+    font-size: 1rem;
+  }
+}
+
