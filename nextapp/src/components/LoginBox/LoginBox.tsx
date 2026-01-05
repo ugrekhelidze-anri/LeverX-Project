@@ -6,6 +6,7 @@ import eyeIconVisible from "../../../public/assets/eye.png";
 import { useRouter } from "next/navigation";
 import { useUserContext } from "../../hooks/useUserContext";
 import { useLoginUser } from "../../utils/loginUser";
+import styles from "@/app/auth/page.module.scss";
 
 type TLoginBoxProps = {
   setIsLogin: (condition: boolean) => void;
@@ -18,11 +19,12 @@ export const LoginBox = ({ setIsLogin }: TLoginBoxProps) => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
   const router = useRouter();
   const { refreshUser } = useUserContext();
   const loginUser = useLoginUser();
   const togglePassword = () => setShowPassword((prev) => !prev);
-  
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -31,12 +33,12 @@ export const LoginBox = ({ setIsLogin }: TLoginBoxProps) => {
       setError("Missing fields!");
       return;
     }
-    
+
     setIsLoading(true);
     // make a call to our loginUser module
     const response = await loginUser(email, password, stayLoggedIn);
     setIsLoading(false);
-    
+
     if (response.success) {
       // refresh context before navigation so header has the user immediately
       await refreshUser();
@@ -48,20 +50,21 @@ export const LoginBox = ({ setIsLogin }: TLoginBoxProps) => {
   };
 
   return (
-    <main className="signin">
-      <div className="signin__card">
-        <h1 className="signin__title">Sign In</h1>
-        <p className="signin__subtitle">
+    <main className={styles["signin"]}>
+      <div className={styles["signin__card"]}>
+        <h1 className={styles["signin__title"]}>Sign In</h1>
+        <p className={styles["signin__subtitle"]}>
           Sign in your LeverX employee services account.
         </p>
-        <form className="signin__form" onSubmit={handleSubmit}>
-          <div className="signin__field">
-            <label className="signin__label">Email</label>
+
+        <form className={styles["signin__form"]} onSubmit={handleSubmit}>
+          <div className={styles["signin__field"]}>
+            <label className={styles["signin__label"]}>Email</label>
             <input
               type="email"
               id="email"
               name="email"
-              className="signin__input"
+              className={styles["signin__input"]}
               placeholder="john.doe@leverx.com"
               required
               onChange={(e) => {
@@ -70,14 +73,15 @@ export const LoginBox = ({ setIsLogin }: TLoginBoxProps) => {
               value={email}
             />
           </div>
-          <div className="signin__field">
-            <label className="signin__label">Password</label>
-            <div className="password-input">
+
+          <div className={styles["signin__field"]}>
+            <label className={styles["signin__label"]}>Password</label>
+            <div className={styles["password-input"]}>
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
-                className="signin__input"
+                className={styles["signin__input"]}
                 placeholder="Enter your password"
                 required
                 onChange={(e) => {
@@ -87,27 +91,28 @@ export const LoginBox = ({ setIsLogin }: TLoginBoxProps) => {
               />
               <button
                 type="button"
-                className="password-toggle"
+                className={styles["password-toggle"]}
                 onClick={togglePassword}
               >
                 <img
-                  src={eyeIconHidden}
+                  src={eyeIconHidden.src}
                   alt="hide password"
-                  className={`password-toggle__icon password-toggle__icon--hidden ${
-                    showPassword ? "" : "is-active"
-                  }`}
+                  className={`${styles["password-toggle__icon"]} ${
+                    styles["password-toggle__icon--hidden"]
+                  } ${showPassword ? "" : styles["is-active"]}`}
                 />
                 <img
-                  src={eyeIconVisible}
+                  src={eyeIconVisible.src}
                   alt="show password"
-                  className={`password-toggle__icon password-toggle__icon--visible ${
-                    showPassword ? "is-active" : ""
-                  }`}
+                  className={`${styles["password-toggle__icon"]} ${
+                    styles["password-toggle__icon--visible"]
+                  } ${showPassword ? styles["is-active"] : ""}`}
                 />
               </button>
             </div>
           </div>
-          <div className="signin__checkbox">
+
+          <div className={styles["signin__checkbox"]}>
             <input
               type="checkbox"
               id="keepLoggedIn"
@@ -118,21 +123,27 @@ export const LoginBox = ({ setIsLogin }: TLoginBoxProps) => {
             />
             <p>Keep me logged in</p>
           </div>
+
           <a
-            className="switch-page"
+            className={styles["switch-page"]}
             onClick={() => {
               setIsLogin(false);
             }}
           >
             Dont have an account? Sign up
           </a>
-          <button type="submit" className="signin__submit" disabled={isLoading}>
+
+          <button
+            type="submit"
+            className={styles["signin__submit"]}
+            disabled={isLoading}
+          >
             {isLoading ? "LOGGING IN..." : "LOG IN"}
           </button>
-          <h1 className="error-message">{error}</h1>
+
+          <h1 className={styles["error-message"]}>{error}</h1>
         </form>
       </div>
     </main>
   );
 };
-

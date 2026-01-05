@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import eyeIconHidden from "../../../public/assets/eye-slash.png";
 import eyeIconVisible from "../../../public/assets/eye.png";
 import { useSignUpUser } from "../../utils/signUpUser";
+import styles from "@/app/auth/page.module.scss";
 
 type TRegisterBoxProps = {
   setIsLogin: (condition: boolean) => void;
@@ -52,20 +53,21 @@ export const RegisterBox = ({ setIsLogin }: TRegisterBoxProps) => {
   };
 
   return (
-    <main className="signup">
-      <div className="signup__card">
-        <h1 className="signup__title">Sign Up</h1>
-        <p className="signup__subtitle">
+    <main className={styles["signup"]}>
+      <div className={styles["signup__card"]}>
+        <h1 className={styles["signup__title"]}>Sign Up</h1>
+        <p className={styles["signup__subtitle"]}>
           Sign Up to access your LeverX employee services account.
         </p>
-        <form className="signup__form" onSubmit={handleSubmit}>
-          <div className="signup__field">
-            <label className="signup__label">Name</label>
+
+        <form className={styles["signup__form"]} onSubmit={handleSubmit}>
+          <div className={styles["signup__field"]}>
+            <label className={styles["signup__label"]}>Name</label>
             <input
               type="text"
               id="name"
               name="name"
-              className="signup__input"
+              className={styles["signup__input"]}
               placeholder="Enter your name "
               required
               value={first_name}
@@ -74,13 +76,14 @@ export const RegisterBox = ({ setIsLogin }: TRegisterBoxProps) => {
               }}
             />
           </div>
-          <div className="signup__field">
-            <label className="signup__label">Last name</label>
+
+          <div className={styles["signup__field"]}>
+            <label className={styles["signup__label"]}>Last name</label>
             <input
               type="text"
               id="lastname"
               name="lastname"
-              className="signup__input"
+              className={styles["signup__input"]}
               placeholder="Enter your last name"
               required
               value={last_name}
@@ -89,13 +92,14 @@ export const RegisterBox = ({ setIsLogin }: TRegisterBoxProps) => {
               }}
             />
           </div>
-          <div className="signup__field">
-            <label className="signup__label">Email</label>
+
+          <div className={styles["signup__field"]}>
+            <label className={styles["signup__label"]}>Email</label>
             <input
               type="email"
               id="email"
               name="email"
-              className="signup__input"
+              className={styles["signup__input"]}
               placeholder="Enter your email"
               required
               value={email}
@@ -104,14 +108,15 @@ export const RegisterBox = ({ setIsLogin }: TRegisterBoxProps) => {
               }}
             />
           </div>
-          <div className="signup__field">
-            <label className="signup__label">Password</label>
-            <div className="password-input">
+
+          <div className={styles["signup__field"]}>
+            <label className={styles["signup__label"]}>Password</label>
+            <div className={styles["password-input"]}>
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
-                className="signup__input"
+                className={styles["signup__input"]}
                 placeholder="Enter your password"
                 required
                 value={password}
@@ -121,33 +126,34 @@ export const RegisterBox = ({ setIsLogin }: TRegisterBoxProps) => {
               />
               <button
                 type="button"
-                className="password-toggle"
+                className={styles["password-toggle"]}
                 onClick={togglePassword}
               >
                 <img
-                  src={eyeIconVisible}
+                  src={eyeIconVisible.src}
                   alt="hide password"
-                  className={`password-toggle__icon password-toggle__icon--hidden ${
-                    showPassword ? "" : "is-active"
-                  }`}
+                  className={`${styles["password-toggle__icon"]} ${
+                    styles["password-toggle__icon--hidden"]
+                  } ${showPassword ? "" : styles["is-active"]}`}
                 />
                 <img
-                  src={eyeIconHidden}
+                  src={eyeIconHidden.src}
                   alt="show password"
-                  className={`password-toggle__icon password-toggle__icon--visible ${
-                    showPassword ? "is-active" : ""
-                  }`}
+                  className={`${styles["password-toggle__icon"]} ${
+                    styles["password-toggle__icon--visible"]
+                  } ${showPassword ? styles["is-active"] : ""}`}
                 />
               </button>
             </div>
           </div>
-          <div className="signup__field">
-            <label className="signup__label">Confirm password</label>
+
+          <div className={styles["signup__field"]}>
+            <label className={styles["signup__label"]}>Confirm password</label>
             <input
               type={showPassword ? "text" : "password"}
               id="confirmpassword"
               name="confirmpassword"
-              className="signup__input"
+              className={styles["signup__input"]}
               placeholder="Confirm your password"
               required
               value={confirmPassword}
@@ -156,25 +162,27 @@ export const RegisterBox = ({ setIsLogin }: TRegisterBoxProps) => {
               }}
             />
           </div>
+
           <a
-            className="switch-page"
+            className={styles["switch-page"]}
             onClick={() => {
               setIsLogin(true);
             }}
           >
             Already have an account? Sign in
           </a>
+
           <button
             type="submit"
-            className="signup__submit"
+            className={styles["signup__submit"]}
             disabled={isButtonEnabled}
           >
             SIGN UP
           </button>
-          <h1 className="error-message">{error}</h1>
+
+          <h1 className={styles["error-message"]}>{error}</h1>
         </form>
       </div>
     </main>
   );
 };
-
