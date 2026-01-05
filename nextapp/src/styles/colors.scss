@@ -1,0 +1,39 @@
+/* global color variables shared across all pages */
+:root {
+  --color-primary: #1a4eb0;
+  --color-primary-dark: #164a9c;
+  --color-primary-light: #4c88f4;
+  --color-primary-lighter: #5691fe;
+  --color-primary-accent: #1e55ac;
+  --color-background: #eef2fb;
+  --color-background-light: #f5f5f9;
+  --color-white: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-tertiary: #666666;
+  --color-text-light: #888888;
+  --color-text-lighter: #999999;
+  --color-text-blue: #a6bee9;
+  --color-text-grey: grey;
+  --color-text-tab: #8c9ab8;
+  --color-border: #cccfd1;
+  --color-border-light: #e0e0e0;
+  --color-button: #5591ff;
+  --color-success: #27ae60;
+  --color-success-hover: #1d8549;
+  --color-surface-alt: #fafafa;
+  --color-hover-neutral: #e0dede;
+  --color-avatar-bg: #ffd68a;
+  --color-remote-icon-bg: #914bb9;
+  --color-shadow-light: rgba(0, 0, 0, 0.08);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-medium: rgba(0, 0, 0, 0.15);
+  --color-shadow-dark: rgba(0, 0, 0, 0.2);
+  --color-backdrop: rgba(0, 0, 0, 0.5);
+  --color-border-white-transparent: rgba(255, 255, 255, 0.4);
+  --color-white-transparent-90: rgba(255, 255, 255, 0.9);
+  --color-white-transparent-80: rgba(255, 255, 255, 0.8);
+  --color-error: #d64545;
+  --color-mobile-search-bg: #0a41a5;
+  --color-transparent: transparent;
+}
