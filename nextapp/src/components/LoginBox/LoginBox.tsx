@@ -6,7 +6,7 @@ import eyeIconVisible from "../../../public/assets/eye.png";
 import { useRouter } from "next/navigation";
 import { useUserContext } from "../../hooks/useUserContext";
 import { useLoginUser } from "../../utils/loginUser";
-import styles from "@/app/auth/page.module.scss";
+import styles from "@/app/(public)/auth/page.module.scss";
 
 type TLoginBoxProps = {
   setIsLogin: (condition: boolean) => void;

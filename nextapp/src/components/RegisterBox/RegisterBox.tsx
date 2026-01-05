@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import eyeIconHidden from "../../../public/assets/eye-slash.png";
 import eyeIconVisible from "../../../public/assets/eye.png";
 import { useSignUpUser } from "../../utils/signUpUser";
-import styles from "@/app/auth/page.module.scss";
+import styles from "@/app/(public)/auth/page.module.scss";
 
 type TRegisterBoxProps = {
   setIsLogin: (condition: boolean) => void;

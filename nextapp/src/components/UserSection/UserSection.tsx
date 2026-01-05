@@ -1,3 +1,5 @@
+import styles from "@/app/(protected)/users/[id]/page.module.scss";
+
 type UserSectionProps = {
   title: string;
   children: React.ReactNode;
@@ -5,10 +7,9 @@ type UserSectionProps = {
 
 export const UserSection = ({ title, children }: UserSectionProps) => {
   return (
-    <section className="user-profile__section">
-      <h2 className="user-profile__section-title">{title}</h2>
+    <section className={styles["user-profile__section"]}>
+      <h2 className={styles["user-profile__section-title"]}>{title}</h2>
       {children}
     </section>
   );
 };
-

@@ -1,4 +1,5 @@
 "use client";
+import styles from "@/app/(protected)/users/[id]/page.module.scss";
 
 type InfoItemProps = {
   icon: string;
@@ -27,23 +28,28 @@ export const InfoItem = ({
   hiddenValue, // hidden value
   inputType = "text", // input type, default to text
 }: InfoItemProps) => {
-  const fieldClassName = `user-profile__field ${
-    link ? "user-profile__field--link" : ""
-  } ${editable ? "user-profile__field--editable" : ""}`;
+  const fieldClassName = `
+    ${styles["user-profile__field"]}
+    ${link ? styles["user-profile__field--link"] : ""}
+    ${editable ? styles["user-profile__field--editable"] : ""}
+  `;
 
   return (
     <div
-      className={`user-profile__section-item ${
-        isLast ? "user-profile__section-item--last" : ""
-      }`}
+      className={`
+        ${styles["user-profile__section-item"]}
+        ${isLast ? styles["user-profile__section-item--last"] : ""}
+      `}
     >
       <img
         src={icon}
         alt={label.toLowerCase()}
-        className="user-profile__section-icon"
+        className={styles["user-profile__section-icon"]}
       />
-      <div className="user-profile__section-content">
-        <span className="user-profile__section-label">{label}:</span>
+
+      <div className={styles["user-profile__section-content"]}>
+        <span className={styles["user-profile__section-label"]}>{label}:</span>
+
         <input
           type={inputType}
           className={fieldClassName}
@@ -52,10 +58,11 @@ export const InfoItem = ({
           readOnly={readOnly || !editable}
           onChange={onChange ? (e) => onChange(e.target.value) : undefined}
         />
+
         {hiddenValue && (
           <input
             type="hidden"
-            className="user-profile__field"
+            className={styles["user-profile__field"]}
             data-field={dataField}
             value={hiddenValue}
             readOnly
@@ -65,4 +72,3 @@ export const InfoItem = ({
     </div>
   );
 };
-
