@@ -50,13 +50,15 @@ export default function ProtectedLayout({
         onSignOut={signOut}
         whichTabIsOpen={getActiveTab(pathname)}
       />
+
       <MobileMenu
         currentUser={user}
         mobileOpen={mobileOpen}
         onClose={closeMobile}
         onSignOut={signOut}
       />
-      {children}
+
+      <main className="app-content">{children}</main>
     </>
   );
 }
