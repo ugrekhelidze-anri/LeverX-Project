@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../store/store";
 import { setUser, setLoading } from "../features/user/userSlice";
-import { useGetCurrentUser } from "../utils/getCurrentUser";
+import { getUser } from "../utils/getCurrentUser";
 
 // Typed hooks
 export const useAppDispatch = () => useDispatch<AppDispatch>();
@@ -16,7 +16,7 @@ export const useUserContext = () => {
   const dispatch = useAppDispatch(); // dispatch from rtk so we can call actions on user
   const user = useAppSelector((state) => state.user.user); // get user state from rtk
   const loading = useAppSelector((state) => state.user.loading); // get loading state from rtk
-  const getCurrentUser = useGetCurrentUser();
+  const getCurrentUser = getUser();
 
   // refresh user function
   const refreshUser = async () => {

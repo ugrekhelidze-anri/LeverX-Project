@@ -1,6 +1,6 @@
 import { useLazyGetSingleUserQuery } from "../features/user/usersApiSlice";
 
-export function useGetCurrentUser() {
+export function getUser() {
   // use lazy version since we dont need it to run right away
   const [getUserById] = useLazyGetSingleUserQuery();
 
