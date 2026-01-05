@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.scss";
 import "../styles/colors.scss";
 import "../styles/fadeIn.scss";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Employee List",
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

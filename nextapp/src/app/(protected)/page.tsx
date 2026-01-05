@@ -2,15 +2,15 @@
 
 import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { runSearch } from "../utils/runSearch";
-import { runAdvancedSearch } from "../utils/runAdvancedSearch";
-import { SearchTabs } from "../components/SearchTabs/SearchTabs";
-import { ViewToggle } from "../components/ViewToggle/ViewToggle";
-import { DirectoryGrid } from "../components/DirectoryGrid/DirectoryGrid";
-import { DirectoryList } from "../components/DirectoryList/DirectoryList";
-import { TAdvancedFilters, TSearchMode, TViewMode } from "../types/Search";
-import { useUserContext } from "../hooks/useUserContext";
-import { useGetUsersQuery } from "../features/user/usersApiSlice";
+import { runSearch } from "@/utils/runSearch";
+import { runAdvancedSearch } from "@/utils/runAdvancedSearch";
+import { SearchTabs } from "@/components/SearchTabs/SearchTabs";
+import { ViewToggle } from "@/components/ViewToggle/ViewToggle";
+import { DirectoryGrid } from "@/components/DirectoryGrid/DirectoryGrid";
+import { DirectoryList } from "@/components/DirectoryList/DirectoryList";
+import { TAdvancedFilters, TSearchMode, TViewMode } from "@/types/Search";
+import { useUserContext } from "@/hooks/useUserContext";
+import { useGetUsersQuery } from "@/features/user/usersApiSlice";
 import styles from "./page.module.scss";
 
 // every field is clean by default
