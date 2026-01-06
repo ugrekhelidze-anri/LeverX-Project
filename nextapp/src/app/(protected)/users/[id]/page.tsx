@@ -151,11 +151,12 @@ const UserDetailsPage = () => {
 
             <div className={styles["user-profile__card"]}>
               <div className={styles["user-profile__avatar-wrapper"]}>
-                <img
+                <Image
                   src={displayedUser.user_avatar}
                   alt="profile"
                   className={styles["user-profile__card-image"]}
-                  loading="lazy"
+                  width={350}
+                  height={350}
                 />
 
                 {remote && (

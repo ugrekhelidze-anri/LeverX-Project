@@ -89,11 +89,11 @@ $icon-size-remote: 4.5rem;
   }
 
   &__card-image {
-    width: 85%;
-    max-width: $width-card-max;
-    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
+    display: block;
   }
 
   &__avatar-wrapper {
@@ -314,11 +314,6 @@ $icon-size-remote: 4.5rem;
       box-shadow: 0 0 0 0.1rem var(--color-primary);
     }
   }
-
-  &__card-edit--active {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
 }
 
 .app-header__brand {
@@ -351,11 +346,6 @@ $icon-size-remote: 4.5rem;
   .user-profile__card {
     margin-top: 2rem;
     width: 100%;
-  }
-
-  .user-profile__card-image {
-    width: 70%;
-    max-width: 20rem;
   }
 
   .user-profile__avatar-wrapper {
@@ -475,16 +465,6 @@ $icon-size-remote: 4.5rem;
     margin-top: 1.5rem;
   }
 
-  .user-profile__card-image {
-    width: 70%;
-    max-width: 20rem;
-  }
-
-  .user-profile__avatar-wrapper {
-    width: 70%;
-    max-width: 20rem;
-  }
-
   .user-profile__remote-badge {
     width: 4rem;
     height: 4rem;
@@ -576,16 +556,6 @@ $icon-size-remote: 4.5rem;
 
   .user-profile__card {
     margin-top: 1.2rem;
-  }
-
-  .user-profile__card-image {
-    width: 70%;
-    max-width: 20rem;
-  }
-
-  .user-profile__avatar-wrapper {
-    width: 70%;
-    max-width: 20rem;
   }
 
   .user-profile__remote-badge {
