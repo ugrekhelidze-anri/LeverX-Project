@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { IUser } from "../../types/User";
 import { TViewMode } from "../../types/Search";
 import { isUserRemote } from "../../utils/isUserRemote";
@@ -34,16 +35,20 @@ export const DirectoryGrid = ({
         >
           <div className={styles["employee-card__name-row"]}>
             <div className={styles["employee-card__avatar-wrapper"]}>
-              <img
+              <Image
                 src="/assets/employee.png"
                 alt="employee"
                 className={styles["employee-card__avatar"]}
+                width={174}
+                height={174}
               />
               {remote ? (
-                <img
+                <Image
                   src="/assets/home.png"
                   alt="remote-badge"
                   className={styles["employee-card__remote-badge"]}
+                  width={56}
+                  height={56}
                 />
               ) : null}
             </div>
@@ -53,18 +58,22 @@ export const DirectoryGrid = ({
           </div>
           <div className={styles["employee-card__meta"]}>
             <div className={styles["employee-card__meta-item"]}>
-              <img
+              <Image
                 src="/assets/workbag.png"
                 alt="bag icon"
                 className={styles["employee-card__meta-icon"]}
+                width={21}
+                height={40}
               />
               <span>{user.department}</span>
             </div>
             <div className={styles["employee-card__meta-item"]}>
-              <img
+              <Image
                 src="/assets/door.png"
                 alt="door icon"
                 className={styles["employee-card__meta-icon"]}
+                width={21}
+                height={40}
               />
               <span>{user.room}</span>
             </div>

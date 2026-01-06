@@ -3,6 +3,7 @@
 import { useHeaderPaths } from "../../hooks/useHeaderPaths";
 import { IUser } from "../../types/User";
 import styles from "./Header.module.scss";
+import Image from "next/image";
 
 type HeaderProps = {
   currentUser: IUser | null;
@@ -35,6 +36,7 @@ export const Header = ({
         <p className={styles["app-header__brand-label"]}>LeverX</p>
         <h1 className={styles["app-header__brand-title"]}>EMPLOYEE SERVICES</h1>
       </div>
+
       <button
         type="button"
         className={`${styles["app-header__menu-toggle"]} ${
@@ -42,17 +44,22 @@ export const Header = ({
         }`}
         onClick={onMenuToggle}
       >
-        <img
+        <Image
           src="/assets/menu.png"
           alt="open menu"
+          width={24}
+          height={24}
           className={`${styles["app-header__menu-icon"]} ${styles["app-header__menu-icon--open"]}`}
         />
-        <img
+        <Image
           src="/assets/x.png"
           alt="close menu"
+          width={24}
+          height={24}
           className={`${styles["app-header__menu-icon"]} ${styles["app-header__menu-icon--close"]}`}
         />
       </button>
+
       <div className={styles["app-header__nav"]}>
         <div
           className={`${styles["app-header__address"]} ${
@@ -65,11 +72,13 @@ export const Header = ({
         >
           <h1>Address Book</h1>
         </div>
+
         {isAdmin && (
           <div className={`${styles["app-header__address"]} leave`}>
             <h1>Leave Requests</h1>
           </div>
         )}
+
         {isAdmin && (
           <div
             className={`${styles["app-header__address"]} settings ${
@@ -84,18 +93,22 @@ export const Header = ({
           </div>
         )}
       </div>
+
       <button type="button" className={styles["app-header__support"]}>
         <span className={styles["app-header__support-icon"]}>?</span>
         <span className={styles["app-header__support-label"]}>SUPPORT</span>
       </button>
+
       <div
         className={styles["app-header__profile"]}
         role="button"
         onClick={goProfile}
       >
-        <img
+        <Image
           src={currentUser?.user_avatar || "/assets/pfp.png"}
           alt="pfp"
+          width={37}
+          height={37}
           className={styles["app-header__profile-image"]}
         />
         <h1 className={styles["app-header__profile-name"]}>
@@ -104,14 +117,17 @@ export const Header = ({
             : "STEVE COOK"}
         </h1>
       </div>
+
       <button
         type="button"
         className={styles["app-header__exit"]}
         onClick={onSignOut}
       >
-        <img
+        <Image
           src="/assets/shutdown.png"
           alt="exiticon"
+          width={30}
+          height={30}
           className={styles["app-header__exit-icon"]}
         />
       </button>

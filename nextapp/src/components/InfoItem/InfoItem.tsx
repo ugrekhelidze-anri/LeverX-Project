@@ -1,5 +1,6 @@
 "use client";
 import styles from "@/app/(protected)/users/[id]/page.module.scss";
+import Image from "next/image";
 
 type InfoItemProps = {
   icon: string;
@@ -41,10 +42,12 @@ export const InfoItem = ({
         ${isLast ? styles["user-profile__section-item--last"] : ""}
       `}
     >
-      <img
+      <Image
         src={icon}
         alt={label.toLowerCase()}
         className={styles["user-profile__section-icon"]}
+        width={24}
+        height={24}
       />
 
       <div className={styles["user-profile__section-content"]}>

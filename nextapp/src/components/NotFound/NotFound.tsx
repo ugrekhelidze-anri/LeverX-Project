@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./NotFound.module.scss";
 
@@ -22,10 +23,12 @@ export const NotFound = ({
   return (
     <div className={styles["profile-error"]}>
       <div className={styles["profile-error__content"]}>
-        <img
+        <Image
           src="/assets/notfoundpicture.png"
           alt="notfound"
           className={styles["profile-error__image"]}
+          width={400}
+          height={400}
         />
         <h1>{title}</h1>
         <p>{description}</p>

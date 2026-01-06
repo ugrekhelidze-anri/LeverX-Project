@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useMemo, useState } from "react";
 import { InfoItem } from "@/components/InfoItem/InfoItem";
 import { UserSection } from "@/components/UserSection/UserSection";
 import { useUserContext } from "@/hooks/useUserContext";
@@ -25,7 +26,6 @@ const UserDetailsPage = () => {
   const { user: currentUser, loading: loadingCurrent } = useUserContext();
   const [userInfo, setUserInfo] = useState<IUser | null>(null);
   const [originalUser, setOriginalUser] = useState<IUser | null>(null);
-  const [notFound, setNotFound] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
   // Use RTK query to fetch user by id
@@ -37,20 +37,13 @@ const UserDetailsPage = () => {
   const editUserFields = useEditUserFields();
   const [saving, setSaving] = useState(false);
 
-  // Normalize and set user data when fetched
-  useEffect(() => {
-    if (fetchedUser) {
-      const normalized = normalizeVisaData({ ...fetchedUser });
-      setUserInfo(normalized);
-      setOriginalUser(normalized);
-      setNotFound(false);
-    } else if (error || (!loadingUser && !fetchedUser && id)) {
-      setNotFound(true);
-    }
-  }, [fetchedUser, error, loadingUser, id]);
+  const normalizedUser = useMemo(() => {
+    if (!fetchedUser) return null;
+    return normalizeVisaData({ ...fetchedUser });
+  }, [fetchedUser]);
 
   // call util
-  const canEdit = canUserEdit(currentUser, userInfo);
+  const canEdit = canUserEdit(currentUser, normalizedUser);
 
   // handle field changes with an util
   const onFieldChange = (
@@ -65,8 +58,9 @@ const UserDetailsPage = () => {
 
   // start edit mode
   const handleStartEdit = () => {
-    if (!userInfo || !canEdit) return;
-    setOriginalUser(userInfo);
+    if (!normalizedUser || !canEdit) return;
+    setUserInfo(normalizedUser);
+    setOriginalUser(normalizedUser);
     setIsEditing(true);
   };
 
@@ -110,10 +104,7 @@ const UserDetailsPage = () => {
   };
 
   // display loading while fetching or while user info is not ready
-  if (
-    (loadingUser || loadingCurrent || (!notFound && !userInfo)) &&
-    !notFound
-  ) {
+  if (loadingUser || loadingCurrent) {
     return (
       <main className="user-profile page--fade-in">
         <p>Loading...</p>
@@ -122,7 +113,7 @@ const UserDetailsPage = () => {
   }
 
   // 404 page if not found
-  if (notFound) {
+  if (!normalizedUser && error) {
     return (
       <main className="user-profile page--fade-in">
         <NotFound />
@@ -130,13 +121,15 @@ const UserDetailsPage = () => {
     );
   }
 
+  const displayedUser = isEditing ? userInfo : normalizedUser;
+
   // extra guard for ts complaining
-  if (!userInfo) {
+  if (!displayedUser) {
     return null;
   }
 
   // to display remote icon if user is remote
-  const remote = !!userInfo?.isRemoteWork;
+  const remote = !!displayedUser?.isRemoteWork;
 
   return (
     <>
@@ -148,34 +141,43 @@ const UserDetailsPage = () => {
               className={styles["user-profile__back"]}
               onClick={() => router.back()}
             >
-              <img src="/assets/chevron-left.svg" alt="back" />
+              <Image
+                src="/assets/chevron-left.svg"
+                alt="back"
+                width={30}
+                height={30}
+              />
             </button>
 
             <div className={styles["user-profile__card"]}>
               <div className={styles["user-profile__avatar-wrapper"]}>
                 <img
-                  src={userInfo.user_avatar}
+                  src={displayedUser.user_avatar}
                   alt="profile"
                   className={styles["user-profile__card-image"]}
+                  loading="lazy"
                 />
 
                 {remote && (
-                  <img
+                  <Image
                     src="/assets/home.png"
                     alt="remote-badge"
                     className={styles["user-profile__remote-badge"]}
                     style={{ display: "block" }}
+                    width={72}
+                    height={72}
                   />
                 )}
               </div>
 
               <h1 className={styles["user-profile__card-name"]}>
-                {userInfo.first_name} {userInfo.last_name}
+                {displayedUser.first_name} {displayedUser.last_name}
               </h1>
 
               <p className={styles["user-profile__card-subtitle"]}>
-                {userInfo.first_native_name} {userInfo.middle_native_name || ""}{" "}
-                {userInfo.last_native_name}
+                {displayedUser.first_native_name}{" "}
+                {displayedUser.middle_native_name || ""}{" "}
+                {displayedUser.last_native_name}
               </p>
 
               <button
@@ -183,7 +185,13 @@ const UserDetailsPage = () => {
                 className={styles["user-profile__card-copy"]}
                 onClick={() => copyLink(window.location.href)}
               >
-                <img src="/assets/copy.png" alt="copy" /> Copy link
+                <Image
+                  src="/assets/copy.png"
+                  alt="copy"
+                  width={21}
+                  height={21}
+                />{" "}
+                Copy link
               </button>
 
               {canEdit && (
@@ -199,7 +207,12 @@ const UserDetailsPage = () => {
                     {isEditing ? (
                       "SAVE"
                     ) : (
-                      <img src="/assets/pen.png" alt="edit" />
+                      <Image
+                        src="/assets/pen.png"
+                        alt="edit"
+                        width={21}
+                        height={21}
+                      />
                     )}
                     {!isEditing && " EDIT"}
                   </button>
@@ -226,7 +239,7 @@ const UserDetailsPage = () => {
                   key={field}
                   icon={icon}
                   label={label}
-                  value={String(userInfo[field])}
+                  value={String(displayedUser[field])}
                   editable={isEditing}
                   onChange={(value) =>
                     onFieldChange(field as keyof TEditableUserData, value)
@@ -240,8 +253,8 @@ const UserDetailsPage = () => {
                 label="Date of birth"
                 value={
                   isEditing
-                    ? formatDateForInput(userInfo.date_birth)
-                    : formatDate(userInfo.date_birth)
+                    ? formatDateForInput(displayedUser.date_birth)
+                    : formatDate(displayedUser.date_birth)
                 }
                 editable={isEditing}
                 onChange={(value) =>
@@ -254,7 +267,7 @@ const UserDetailsPage = () => {
               <InfoItem
                 icon="/assets/user.png"
                 label="Manager"
-                value={`${userInfo.manager.first_name} ${userInfo.manager.last_name}`}
+                value={`${displayedUser.manager.first_name} ${displayedUser.manager.last_name}`}
                 editable={isEditing}
                 onChange={(value) =>
                   onFieldChange(
@@ -273,7 +286,7 @@ const UserDetailsPage = () => {
                   key={field}
                   icon={icon}
                   label={label}
-                  value={String(userInfo[field])}
+                  value={String(displayedUser[field])}
                   editable={isEditing}
                   link={link}
                   onChange={(value) =>
@@ -291,7 +304,7 @@ const UserDetailsPage = () => {
                   key={field}
                   icon={icon}
                   label={label}
-                  value={String(userInfo[field])}
+                  value={String(displayedUser[field])}
                   editable={isEditing}
                   onChange={(value) =>
                     onFieldChange(field as keyof TEditableUserData, value)

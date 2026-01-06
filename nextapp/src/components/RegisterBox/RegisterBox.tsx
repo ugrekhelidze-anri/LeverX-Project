@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 import eyeIconHidden from "../../../public/assets/eye-slash.png";
 import eyeIconVisible from "../../../public/assets/eye.png";
@@ -129,19 +130,23 @@ export const RegisterBox = ({ setIsLogin }: TRegisterBoxProps) => {
                 className={styles["password-toggle"]}
                 onClick={togglePassword}
               >
-                <img
-                  src={eyeIconVisible.src}
+                <Image
+                  src={eyeIconVisible}
                   alt="hide password"
                   className={`${styles["password-toggle__icon"]} ${
                     styles["password-toggle__icon--hidden"]
                   } ${showPassword ? "" : styles["is-active"]}`}
+                  width={32}
+                  height={32}
                 />
-                <img
-                  src={eyeIconHidden.src}
+                <Image
+                  src={eyeIconHidden}
                   alt="show password"
                   className={`${styles["password-toggle__icon"]} ${
                     styles["password-toggle__icon--visible"]
                   } ${showPassword ? styles["is-active"] : ""}`}
+                  width={32}
+                  height={32}
                 />
               </button>
             </div>

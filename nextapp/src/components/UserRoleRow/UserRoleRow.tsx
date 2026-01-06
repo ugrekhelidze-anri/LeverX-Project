@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { IUser } from "../../types/User";
 import styles from "./UserRoleRow.module.scss";
 
@@ -35,10 +36,12 @@ export const UserRoleRow = ({
   return (
     <div className={styles["roles-permissions__row"]}>
       <div className={styles["roles-permissions__row-name"]}>
-        <img
+        <Image
           src={user.user_avatar || "/assets/employee.png"}
           alt="employee avatar"
           className={styles["roles-permissions__avatar"]}
+          width={64}
+          height={64}
         />
         <span className={styles["roles-permissions__name-text"]}>
           {user.first_name} {user.last_name}

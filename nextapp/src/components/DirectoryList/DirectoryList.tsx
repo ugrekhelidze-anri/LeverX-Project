@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { IUser } from "../../types/User";
 import { TViewMode } from "../../types/Search";
 import { isUserRemote } from "../../utils/isUserRemote";
@@ -47,16 +48,20 @@ export const DirectoryList = ({
             onClick={() => onUserClick(user._id)}
           >
             <div className={styles["employee-table__avatar-wrapper"]}>
-              <img
+              <Image
                 src="/assets/employee.png"
                 alt="employee"
                 className={styles["employee-table__avatar"]}
+                width={70}
+                height={70}
               />
               {remote ? (
-                <img
+                <Image
                   src="/assets/home.png"
                   alt="remote-badge"
                   className={styles["employee-table__remote-badge"]}
+                  width={29}
+                  height={29}
                 />
               ) : null}
             </div>
