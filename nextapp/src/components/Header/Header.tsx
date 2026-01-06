@@ -27,7 +27,11 @@ export const Header = ({
 
   return (
     <header className={styles["app-header"]}>
-      <div className={styles["app-header__brand"]} role="button" onClick={goHome}>
+      <div
+        className={styles["app-header__brand"]}
+        role="button"
+        onClick={goHome}
+      >
         <p className={styles["app-header__brand-label"]}>LeverX</p>
         <h1 className={styles["app-header__brand-title"]}>EMPLOYEE SERVICES</h1>
       </div>
@@ -53,7 +57,9 @@ export const Header = ({
         <div
           className={`${styles["app-header__address"]} ${
             // if address is open underline address
-            whichTabIsOpen === "address" ? styles["app-header__address--active"] : ""
+            whichTabIsOpen === "address"
+              ? styles["app-header__address--active"]
+              : ""
           }`}
           onClick={goHome}
         >
@@ -68,7 +74,9 @@ export const Header = ({
           <div
             className={`${styles["app-header__address"]} settings ${
               // if settings tab is open underline settings
-              whichTabIsOpen === "settings" ? styles["app-header__address--active"] : ""
+              whichTabIsOpen === "settings"
+                ? styles["app-header__address--active"]
+                : ""
             }`}
             onClick={goPermissions}
           >
@@ -80,19 +88,27 @@ export const Header = ({
         <span className={styles["app-header__support-icon"]}>?</span>
         <span className={styles["app-header__support-label"]}>SUPPORT</span>
       </button>
-      <div className={styles["app-header__profile"]} role="button">
+      <div
+        className={styles["app-header__profile"]}
+        role="button"
+        onClick={goProfile}
+      >
         <img
           src={currentUser?.user_avatar || "/assets/pfp.png"}
           alt="pfp"
           className={styles["app-header__profile-image"]}
         />
-        <h1 className={styles["app-header__profile-name"]} onClick={goProfile}>
+        <h1 className={styles["app-header__profile-name"]}>
           {currentUser
             ? `${currentUser.first_name} ${currentUser.last_name}`
             : "STEVE COOK"}
         </h1>
       </div>
-      <button type="button" className={styles["app-header__exit"]} onClick={onSignOut}>
+      <button
+        type="button"
+        className={styles["app-header__exit"]}
+        onClick={onSignOut}
+      >
         <img
           src="/assets/shutdown.png"
           alt="exiticon"
@@ -102,4 +118,3 @@ export const Header = ({
     </header>
   );
 };
-
